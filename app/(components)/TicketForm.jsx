@@ -42,66 +42,322 @@ const TicketForm = ({ ticket }) => {
     router.push('/');
   };
   const startingTicketData = {
-    title: '',
-    description: '',
-    priority: 1,
-    progress: 0,
-    status: 'not started',
-    category: 'Hardware Problem',
+    firstname: '',
+    lastname: '',
+    state: '',
+    zip: '',
+    address: '',
+    phone: '',
+    email: '',
+    product_pavers: '',
+    product_syntheticturf: '',
+    product_decking: '',
+    product_pergolas: '',
+    product_lighting: '',
+    product_outdoorkitchens: '',
+    product_bbqislands: '',
+    product_firepits: '',
+    product_outdoorfireplaces: '',
+    product_wallspillars: '',
+    product_waterfeatures: '',
+    source: '',
+    comments: '',
+    priority: '',
   };
 
   if (EDITMODE) {
-    startingTicketData['title'] = ticket.title;
-    startingTicketData['description'] = ticket.description;
-    startingTicketData['category'] = ticket.category;
+    startingTicketData['firstname'] = ticket.firstname;
+    startingTicketData['lastname'] = ticket.lastname;
+    startingTicketData['state'] = ticket.state;
+    startingTicketData['zip'] = ticket.zip;
+    startingTicketData['address'] = ticket.address;
+    startingTicketData['phone'] = ticket.phone;
+    startingTicketData['email'] = ticket.email;
+    startingTicketData['product_pavers'] = ticket.product_pavers;
+    startingTicketData['product_syntheticturf'] = ticket.product_syntheticturf;
+    startingTicketData['product_decking'] = ticket.product_decking;
+    startingTicketData['product_pergolas'] = ticket.product_pergolas;
+    startingTicketData['product_lighting'] = ticket.product_lighting;
+    startingTicketData['product_outdoorkitchens'] =
+      ticket.product_outdoorkitchens;
+    startingTicketData['product_bbqislands'] = ticket.product_bbqislands;
+    startingTicketData['product_firepits'] = ticket.product_firepits;
+    startingTicketData['product_outdoorfireplaces'] =
+      ticket.product_outdoorfireplaces;
+    startingTicketData['product_wallspillars'] = ticket.product_wallspillars;
+    startingTicketData['product_waterfeatures'] = ticket.product_waterfeatures;
+    startingTicketData['source'] = ticket.source;
+    startingTicketData['comments'] = ticket.comments;
     startingTicketData['priority'] = ticket.priority;
-    startingTicketData['status'] = ticket.status;
   }
 
   const [formData, setFormData] = useState(startingTicketData);
   return (
     <div className="flex justify-center">
       <form
-        className="flex flex-col gap-3 w-1/2"
+        className="flex flex-col gap-3"
         method="post"
         onSubmit={handleSubmit}
       >
-        <h3>{EDITMODE ? 'Update Your Ticket' : 'Create Your Ticket'}</h3>
+        <h3>{EDITMODE ? 'Update Customer' : 'Add Customer'}</h3>
 
-        <label>Title</label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          onChange={handleChange}
-          required={true}
-          value={formData.title}
-        />
+        <div className="text-right">
+          <label>First Name</label>
+          <input
+            type="text"
+            id="firstname"
+            name="firstname"
+            onChange={handleChange}
+            required={true}
+            value={formData.firstname}
+            placeholder="Enter first name"
+          />
+        </div>
+        <div className="text-right">
+          <label>Last Name</label>
+          <input
+            type="text"
+            id="lastname"
+            name="lastname"
+            onChange={handleChange}
+            required={true}
+            value={formData.lastname}
+            placeholder="Enter last name"
+          />
+        </div>
+        <div className="text-right">
+          <label>State</label>
+          <select name="state" value={formData.state} onChange={handleChange}>
+            <option value="">Select State</option>
+            <option value="AZ">AZ</option>
+            <option value="CA">CA</option>
+            <option value="CO">CO</option>
+            <option value="NV">NV</option>
+            <option value="OR">OR</option>
+            <option value="TX">TX</option>
+            <option value="WA">WA</option>
+          </select>
+        </div>
+        <div className="text-right">
+          <label>Zip Code</label>
+          <input
+            type="text"
+            id="zip"
+            name="zip"
+            onChange={handleChange}
+            required={true}
+            value={formData.zip}
+            placeholder="Enter zip code"
+          />
+        </div>
+        <div className="text-right">
+          <label>Address</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            onChange={handleChange}
+            required={true}
+            value={formData.address}
+            placeholder="Enter address"
+          />
+        </div>
+        <div className="text-right">
+          <label>Phone</label>
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            onChange={handleChange}
+            required={true}
+            value={formData.phone}
+            placeholder="Enter phone number"
+          />
+        </div>
+        <div className="text-right">
+          <label>Email</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            onChange={handleChange}
+            required={true}
+            value={formData.email}
+            placeholder="Enter email"
+          />
+        </div>
 
-        <label>Description</label>
-        <textarea
-          type="text"
-          id="description"
-          name="description"
-          onChange={handleChange}
-          required={true}
-          value={formData.description}
-          rows="5"
-        ></textarea>
+        <div className="text-right">
+          <label>What products are they interested in?</label>
+          <br />
+          <label>
+            <input
+              id="product_pavers"
+              name="product_pavers"
+              type="checkbox"
+              onChange={handleChange}
+            />
+            Pavers
+          </label>
+          <br />
+          <label>
+            <input
+              id="product_syntheticturf"
+              name="product_syntheticturf"
+              type="checkbox"
+              onChange={handleChange}
+            />
+            Synthetic Turf
+          </label>
+          <br />
 
-        <label>Category</label>
-        <select
-          id="category"
-          name="category"
-          onChange={handleChange}
-          required={true}
-          value={formData.category}
-        >
-          <option value="">- Select One -</option>
-          <option value="Hardware Problem">Hardware Problem</option>
-          <option value="Software Problem">Software Problem</option>
-          <option value="Project">Project</option>
-        </select>
+          <label>
+            <input
+              id="product_decking"
+              name="product_decking"
+              type="checkbox"
+              onChange={handleChange}
+            />
+            Decking
+          </label>
+          <br />
+
+          <label>
+            <input
+              id="product_pergolas"
+              name="product_pergolas"
+              type="checkbox"
+              onChange={handleChange}
+            />
+            Pergolas
+          </label>
+          <br />
+
+          <label>
+            <input
+              id="product_lighting"
+              name="product_lighting"
+              type="checkbox"
+              onChange={handleChange}
+            />
+            Lighting
+          </label>
+          <br />
+
+          <label>
+            <input
+              id="product_outdoorkitchens"
+              name="product_outdoorkitchens"
+              type="checkbox"
+              onChange={handleChange}
+            />
+            Outdoor Kitchens
+          </label>
+          <br />
+
+          <label>
+            <input
+              id="product_bbqislands"
+              name="product_bbqislands"
+              type="checkbox"
+              onChange={handleChange}
+            />
+            BBQ Islands
+          </label>
+          <br />
+
+          <label>
+            <input
+              id="product_firepits"
+              name="product_firepits"
+              type="checkbox"
+              onChange={handleChange}
+            />
+            Fire Pits
+          </label>
+          <br />
+
+          <label>
+            <input
+              id="product_outdoorfireplaces"
+              name="product_outdoorfireplaces"
+              type="checkbox"
+              onChange={handleChange}
+            />
+            Outdoor Fireplaces
+          </label>
+          <br />
+
+          <label>
+            <input
+              id="product_wallspillars"
+              name="product_wallspillars"
+              type="checkbox"
+              onChange={handleChange}
+            />
+            Walls & Pillars
+          </label>
+          <br />
+
+          <label>
+            <input
+              id="product_waterfeatures"
+              name="product_waterfeatures"
+              type="checkbox"
+              onChange={handleChange}
+            />
+            Water Features
+          </label>
+        </div>
+
+        <div className="text-right">
+          <label>Where did they hear about us?</label>
+          <br />
+          <select
+            id="source"
+            name="source"
+            onChange={handleChange}
+            required={true}
+            value={formData.source}
+          >
+            <option value="">Select</option>
+            <option value="Billboard">Billboard</option>
+            <option value="Google">Google</option>
+            <option value="Mail">Mail</option>
+            <option value="Magazine">Magazine</option>
+            <option value="Other Website">Other Website</option>
+            <option value="Podcast">Podcast</option>
+            <option value="Radio">Radio</option>
+            <option value="Facebook">Facebook</option>
+            <option value="Instagram">Instagram</option>
+            <option value="TikTok">TikTok</option>
+            <option value="YouTube">YouTube</option>
+            <option value="System Pavers Employees">
+              System Pavers Employees
+            </option>
+            <option value="Television">Television</option>
+            <option value="Word of Mouth/Referral">
+              Word of Mouth/Referral
+            </option>
+            <option value="Event">Event</option>
+            <option value="Flyer on my door">Flyer on the door</option>
+          </select>
+        </div>
+        <div className="text-right">
+          <label>Additional Comments</label>
+          <br />
+          <textarea
+            type="text"
+            id="comments"
+            name="comments"
+            onChange={handleChange}
+            required={true}
+            value={formData.comments}
+            rows="5"
+            cols="35"
+            placeholder="Enter additional comments"
+          ></textarea>
+        </div>
 
         <label>Priority</label>
         <div>
@@ -151,28 +407,14 @@ const TicketForm = ({ ticket }) => {
           />
           <label>5</label>
         </div>
-        <label>Progress</label>
-        <input
-          type="range"
-          id="progress"
-          name="progress"
-          value={formData.progress}
-          min="0"
-          max="100"
-          onChange={handleChange}
-        />
-        <label>Status</label>
-        <select name="status" value={formData.status} onChange={handleChange}>
-          <option value="">- Select One -</option>
-          <option value="not started">Not Started</option>
-          <option value="started">Started</option>
-          <option value="done">Done</option>
-        </select>
-        <input
-          type="submit"
-          className="btn max-w-xs"
-          value={EDITMODE ? 'Update Ticket' : 'Create Ticket'}
-        />
+
+        <div className="text-right">
+          <input
+            type="submit"
+            className="btn max-w-xs"
+            value={EDITMODE ? 'Update Customer' : 'Submit Customer'}
+          />
+        </div>
       </form>
     </div>
   );

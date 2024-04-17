@@ -12,16 +12,13 @@ export async function GET(req, { params }) {
 }
 
 export async function PUT(req, { params }) {
-  console.log('1');
   try {
     const { id } = params;
-    console.log(id);
     const body = await req.json();
     const ticketData = body.formData;
     const updateTicketData = await Ticket.findByIdAndUpdate(id, {
       ...ticketData,
     });
-    console.log(ticketData);
     return NextResponse.json({ message: 'Ticket Updated' }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ message: 'Error', error }, { status: 500 });

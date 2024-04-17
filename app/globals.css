@@ -19,7 +19,10 @@
     @apply text-2xl;
   }
   h4 {
-    @apply text-xl;
+    @apply text-xl -mt-1.5 ml-3;
+  }
+  h5 {
+    @apply text-lg;
   }
   p {
     @apply text-sm text-default-text;
