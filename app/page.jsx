@@ -19,7 +19,7 @@ const Dashboard = async () => {
 
   return (
     <div className="p-5">
-      <h1>Customers | Listed by Marketing Source</h1>
+      <h1>New Customers | Listed by Marketing Source</h1>
       <br />
       <div>
         {tickets &&
