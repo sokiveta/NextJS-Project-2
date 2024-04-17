@@ -196,6 +196,7 @@ const TicketForm = ({ ticket }) => {
               name="product_pavers"
               type="checkbox"
               onChange={handleChange}
+              checked={formData.product_pavers == 'on' ? 'checked' : ''}
             />
             Pavers
           </label>
@@ -206,6 +207,7 @@ const TicketForm = ({ ticket }) => {
               name="product_syntheticturf"
               type="checkbox"
               onChange={handleChange}
+              checked={formData.product_syntheticturf == 'on' ? 'checked' : ''}
             />
             Synthetic Turf
           </label>
@@ -217,6 +219,7 @@ const TicketForm = ({ ticket }) => {
               name="product_decking"
               type="checkbox"
               onChange={handleChange}
+              checked={formData.product_decking == 'on' ? 'checked' : ''}
             />
             Decking
           </label>
@@ -228,6 +231,7 @@ const TicketForm = ({ ticket }) => {
               name="product_pergolas"
               type="checkbox"
               onChange={handleChange}
+              checked={formData.product_pergolas == 'on' ? 'checked' : ''}
             />
             Pergolas
           </label>
@@ -239,6 +243,7 @@ const TicketForm = ({ ticket }) => {
               name="product_lighting"
               type="checkbox"
               onChange={handleChange}
+              checked={formData.product_lighting == 'on' ? 'checked' : ''}
             />
             Lighting
           </label>
@@ -250,6 +255,9 @@ const TicketForm = ({ ticket }) => {
               name="product_outdoorkitchens"
               type="checkbox"
               onChange={handleChange}
+              checked={
+                formData.product_outdoorkitchens == 'on' ? 'checked' : ''
+              }
             />
             Outdoor Kitchens
           </label>
@@ -261,6 +269,7 @@ const TicketForm = ({ ticket }) => {
               name="product_bbqislands"
               type="checkbox"
               onChange={handleChange}
+              checked={formData.product_bbqislands == 'on' ? 'checked' : ''}
             />
             BBQ Islands
           </label>
@@ -272,6 +281,7 @@ const TicketForm = ({ ticket }) => {
               name="product_firepits"
               type="checkbox"
               onChange={handleChange}
+              checked={formData.product_firepits == 'on' ? 'checked' : ''}
             />
             Fire Pits
           </label>
@@ -283,6 +293,9 @@ const TicketForm = ({ ticket }) => {
               name="product_outdoorfireplaces"
               type="checkbox"
               onChange={handleChange}
+              checked={
+                formData.product_outdoorfireplaces == 'on' ? 'checked' : ''
+              }
             />
             Outdoor Fireplaces
           </label>
@@ -294,6 +307,7 @@ const TicketForm = ({ ticket }) => {
               name="product_wallspillars"
               type="checkbox"
               onChange={handleChange}
+              checked={formData.product_wallspillars == 'on' ? 'checked' : ''}
             />
             Walls & Pillars
           </label>
@@ -305,6 +319,7 @@ const TicketForm = ({ ticket }) => {
               name="product_waterfeatures"
               type="checkbox"
               onChange={handleChange}
+              checked={formData.product_waterfeatures == 'on' ? 'checked' : ''}
             />
             Water Features
           </label>

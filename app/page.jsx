@@ -1,9 +1,9 @@
-import React from 'react';
 import TicketCard from './(components)/TicketCard';
+import { server } from '@/app/config';
 
 const getTickets = async () => {
   try {
-    const res = await fetch('http://localhost:3000/api/Tickets', {
+    const res = await fetch(`${server}/api/Tickets`, {
       cache: 'no-store',
     });
     return res.json();
@@ -19,7 +19,7 @@ const Dashboard = async () => {
 
   return (
     <div className="p-5">
-      <h1>New Customers | Listed by Marketing Source</h1>
+      <h1>System Pavers | New Customers Listed by Marketing Source</h1>
       <br />
       <div>
         {tickets &&

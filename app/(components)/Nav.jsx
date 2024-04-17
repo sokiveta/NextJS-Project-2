@@ -1,8 +1,4 @@
-import {
-  faHome,
-  faTicket,
-  faAddressCard,
-} from '@fortawesome/free-solid-svg-icons';
+import { faHome, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 
@@ -18,7 +14,9 @@ const Nav = () => {
         </Link>
       </div>
       <div>
-        <p className="text-default-text">System Pavers | Customer List</p>
+        <p className="text-default-text">
+          System Pavers | Outdoor Living Designed Around You
+        </p>
       </div>
     </nav>
   );
